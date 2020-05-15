@@ -1,22 +1,26 @@
 {
   "name": "keyboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Keyboard a demo project of piano in react",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["Piano", "keyboard", "react"],
   "author": "Marete Kent <maretekent@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maretekent/keyboard/issues"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "awesome-typescript-loader": "^5.2.1",

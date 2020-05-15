@@ -1,0 +1,14 @@
+
+.black-key {
+    height: 8em;
+    width: 2em;
+    margin:0 0 0 -1em;
+    z-index:2;
+    border:1px solid #000;
+    border-radius:0 0 3px 3px;
+    background:linear-gradient(45deg,#222 0%,#555 100%)
+}
+
+.black-key:active {
+    background:linear-gradient(to right,#444 0%,#222 100%)
+}

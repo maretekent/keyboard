@@ -22,6 +22,10 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/,
         options: { cacheDirectory: true }
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },

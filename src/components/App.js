@@ -1,4 +1,7 @@
 import React, { Component, useState } from "react";
+import "../css/styles.css";
+import WhiteKey from "./whitekeys";
+import BlackKey from "./blackkeys";
 
 class App extends Component {
  
@@ -6,9 +9,35 @@ class App extends Component {
         super(props);
     }   
 
+    renderOctaves = (octave) => {
+        let renderedComponents = []
+        octave.map(item => {
+            if(item === "e" || item === "b"){
+            renderedComponents.push( 
+                    <WhiteKey letter={item} />
+               )
+            } else {
+                renderedComponents.push( <>
+                    <WhiteKey letter={item} />
+                    <BlackKey />
+                </>) 
+            }
+        });
+        return renderedComponents;
+    };
+
     render () {
-        return (
-            <h1> My favourite color in this react typescript app is {this.props.color} </h1>
+        const octave = ['c','d','e','f','g','a','b'];
+        return (<>
+            <div className="container">
+                <div className="header">
+                    <h1>Piano</h1>
+                </div>
+                <div className="keyboard">
+                    {this.renderOctaves(octave)}
+                </div>
+            </div>
+            </>
         );
     }
 }

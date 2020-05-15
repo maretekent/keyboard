@@ -1,0 +1,15 @@
+__pycache__/
+node_modules
+
+# Frontend/JS dependencies
+/node_modules
+package-lock.json
+
+# VSCODE
+.vscode/settings.json
+yarn.lock
+.idea
+.DS_Store
+.cache
+dist/
+build/

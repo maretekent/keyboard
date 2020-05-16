@@ -19,7 +19,6 @@ class App extends Component {
     }   
 
     handleClicked = (value) => {
-        console.log(value);
         this.setState({
             played : value,
             highlighted: value
@@ -43,7 +42,6 @@ class App extends Component {
         let status = false;
         if (playnotes instanceof Array){
                 status = playnotes.every((item) => {
-                    console.log("item:" + item.trim());
                     if (!this.state.octave.includes(item.trim())){ 
                     return false
                     } else {
@@ -55,7 +53,6 @@ class App extends Component {
         } else {
             if(this.state.octave.includes(playnotes.trim())){ status = true}
         }
-        console.log("status: " + status)
         return status;
      };
 
@@ -72,7 +69,6 @@ class App extends Component {
         }
         playnotes.map((item, i) => {
             setTimeout(() => {
-                console.log(item.trim()); 
                 this.setState({
                     played : item.trim(),
                     highlighted: item.trim()
@@ -81,8 +77,6 @@ class App extends Component {
                 offset += 800;
         });
         
-        console.log(this.state.input);
-        console.log(notes);
     };
 
     renderOctaves = (octave) => {

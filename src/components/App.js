@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import "../css/styles.css";
 import WhiteKey from "./whitekeys";
 import BlackKey from "./blackkeys";
-import capitalise from "../utils/fomart"
+import capitalise from "../utils/format";
 
 class App extends Component {
  
@@ -71,17 +71,14 @@ class App extends Component {
             return;
         }
         playnotes.map((item, i) => {
-            
-                setTimeout(() => {
-                    console.log(item.trim()); 
-                    this.setState({
-                        played : item.trim(),
-                        highlighted: item.trim()
-                        });
-                    }, 1000 + offset);
-                    offset += 800;
-            
-             
+            setTimeout(() => {
+                console.log(item.trim()); 
+                this.setState({
+                    played : item.trim(),
+                    highlighted: item.trim()
+                    });
+                }, 1000 + offset);
+                offset += 800;
         });
         
         console.log(this.state.input);

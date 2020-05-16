@@ -11,6 +11,7 @@ Requirements
 Ensure you have either `npm` or `yarn` installed.
 > To check whether you have `npm` or `yarn` installed you can run the command `npm -v` or `yarn -v`
 > to check whether you have them installed respectively.
+> Clone the repo e.g. `git clone https://github.com/maretekent/keyboard` to your favourite project directory.
 
 ### Step 2
 You need to install all the project's dependencies locally, for this you should run

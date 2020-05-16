@@ -77,17 +77,21 @@ body {
     justify-content: center;
     color: #fff;
     width: 50%;
+    text-align: center;
+}
+
+.play-form .my-form {
+    text-align: center;
+    justify-content: center;
 }
 
 .my-form .form-group {
     padding-bottom: 15px;
-    display: flex;
+    text-align: center;
 }
 
 .my-form label {
 	display: block;
-	margin-right: 20px;
-	padding-right: 20px;
 }
 
 .my-form input[type="text"] {
@@ -100,4 +104,8 @@ body {
 	color: #fff;
 	padding: 10px 15px;
 	border: 1px solid #4DF790;
+}
+
+.errors {
+    color: #F7644D;
 }

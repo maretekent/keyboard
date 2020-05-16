@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import "../css/styles.css";
 import WhiteKey from "./whitekeys";
 import BlackKey from "./blackkeys";
@@ -11,7 +11,10 @@ class App extends Component {
         this.state = {
             played : "",
             highlighted: "",
-            input: ""
+            input: "",
+            error: false,
+            errorMessage: "",
+            octave : ['c','d','e','f','g','a','b']
         };
     }   
 
@@ -24,24 +27,65 @@ class App extends Component {
     };
 
     handleChange = (e) => {
-        this.setState({ input: e.target.value });
+        const note = e.target.value;
+        this.setState({ input: note});
+
+        if (this.validateInput(note)) {
+            this.setState({ 
+                error: false,
+                errorMessage: ""
+            });
+        }
+
+     };
+
+     validateInput = (playnotes) => {
+        let status = false;
+        if (playnotes instanceof Array){
+                status = playnotes.every((item) => {
+                    console.log("item:" + item.trim());
+                    if (!this.state.octave.includes(item.trim())){ 
+                    return false
+                    } else {
+                        return true;
+                    }
+                    
+                });
+
+        } else {
+            if(this.state.octave.includes(playnotes.trim())){ status = true}
+        }
+        console.log("status: " + status)
+        return status;
      };
 
     handlePlay = () => {
-        const notes = this.state.input;
+        const notes = this.state.input.trim();
         let playnotes = notes.split(",");
         let offset = 0;
+        if (!this.validateInput(playnotes)) {
+            this.setState({
+                error: true,
+                errorMessage: "You input may be empty or contains non octave notes"
+            });
+            return;
+        }
         playnotes.map((item, i) => {
-            setTimeout(() => {
-                console.log(item); 
-                this.setState({
-                    highlighted: item
-                });
-              }, 1000 + offset);
-            offset += 800;
+            
+                setTimeout(() => {
+                    console.log(item.trim()); 
+                    this.setState({
+                        played : item.trim(),
+                        highlighted: item.trim()
+                        });
+                    }, 1000 + offset);
+                    offset += 800;
+            
+             
         });
         
         console.log(this.state.input);
+        console.log(notes);
     };
 
     renderOctaves = (octave) => {
@@ -63,7 +107,6 @@ class App extends Component {
     };
 
     render () {
-        const octave = ['c','d','e','f','g','a','b'];
         const capitalised = capitalise(this.state.played);
         return (<>
             <div className="container">
@@ -71,7 +114,7 @@ class App extends Component {
                     <h1>Piano</h1>
                 </div>
                 <div className="keyboard">
-                    {this.renderOctaves(octave)}
+                    {this.renderOctaves(this.state.octave)}
                 </div>
                 <div className="results">
                     You played : {capitalised} 
@@ -80,7 +123,7 @@ class App extends Component {
                     <div className="play-form">
                         <div className="my-form">
                             <div className="form-group">
-                                <label>Enter notes to play (They should be delimited by a comma e.g. c,f,d,e)</label>
+                                <label>Enter notes to play <br/> (They should be delimited by a comma e.g. c,f,d,e)</label>
                             </div>
                             <div className="form-group">
                                 <input type="text" 
@@ -88,6 +131,10 @@ class App extends Component {
                                     onChange={ this.handleChange }/>
                                 <button className="button" type="submit" onClick={this.handlePlay}>Play</button>
                             </div>
+                            {this.state.error && (
+                                <div className="errors">{this.state.errorMessage}</div>
+                            )}
+                                 
                         </div>
                     </div>
                 </div>

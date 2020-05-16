@@ -57,3 +57,55 @@ body {
     margin: 0 0 0 -1em;
 }
 
+.highlighted {
+    background:linear-gradient(to right,#fffc00
+    0%, #ffffff 100%) 
+}
+
+.results {
+    justify-content: center;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.play-form {
+    display: block;
+	padding: 20px;
+    margin: 20px auto;
+    justify-content: center;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+}
+
+.play-form .my-form {
+    text-align: center;
+    justify-content: center;
+}
+
+.my-form .form-group {
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.my-form label {
+	display: block;
+}
+
+.my-form input[type="text"] {
+	padding: 8px;
+	width: 60%;
+}
+
+.my-form .button {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 15px;
+	border: 1px solid #4DF790;
+}
+
+.errors {
+    color: #F7644D;
+}

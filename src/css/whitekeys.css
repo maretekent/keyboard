@@ -18,3 +18,14 @@
     border-bottom:1px solid #999;
     background:linear-gradient(to bottom,#fff 0%,#e9e9e9 100%)
 }
+
+.highlighted {
+    background:linear-gradient(to right,#fffc00
+    0%, #ffffff 100%) 
+}
+
+span.note-letters {
+	position: absolute;
+	text-align: center;
+	bottom: 10px;
+}

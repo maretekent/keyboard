@@ -40,3 +40,25 @@ alternatively is to run
 ```
 npm start
 ```
+
+### Adding an Octave to Keyboard
+
+- You can add an octave to the keyboard on line [17](https://github.com/maretekent/keyboard/blob/master/src/components/App.js#L17) of App.js file
+for instance `octave : ['c','d','e','f','g','a','b','c','d','e','f','g','a','b']`
+- A nice to have would be creating configurable file or env variables that one can easily add the octave
+
+
+### Running Test
+We are currently using mocha, chai, sinon and enzyme for testing
+to run the test just run the following:
+`npm test`
+
+### Pull Requests
+There are pull requests closed
+[Pull Requests](https://github.com/maretekent/keyboard/pulls?q=is%3Apr+is%3Aclosed)
+
+### Issues
+I have logged issues here
+[Issues](https://github.com/maretekent/keyboard/issues)
+
+

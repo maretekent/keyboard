@@ -1,6 +1,6 @@
 # Keyboard
 
-The keyboard is a project demostrates uses JavaScript MVC framework (such as React) so that when you click on a white key the key is highlighted and the corresponding letter is appended to an element below the keyboard that acts as a log.
+The keyboard is a project demostrates piano keyboard and uses JavaScript MVC framework (such as React). Concerning the design when you click on a white key, the key is highlighted and the corresponding letter is appended to an element below the keyboard that acts as a log.
 
 
 ## Running locally - without Docker
